@@ -13,7 +13,7 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 @st.cache_resource
 def load_model():
     model = CVAE().to(device)
-    model.load_state_dict(torch.load('web_app/cvae_mnist.pth', map_location=device))
+    model.load_state_dict(torch.load('cvae_mnist.pth', map_location=device))
     model.eval()
     return model
 
